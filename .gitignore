@@ -1,0 +1,7 @@
+*~
+y.output
+y.go
+*.o
+*.a
+*.bin
+hwcompile
