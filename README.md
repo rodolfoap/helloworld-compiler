@@ -1,4 +1,4 @@
-# Hello World Compiler
+# Go Hello World Compiler
 
 Reads a _helloworld_ file, parses it using (_**goyacc**_)[https://pkg.go.dev/modernc.org/goyacc] and compiles it to a binary.
 
