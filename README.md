@@ -1,11 +1,15 @@
 # Hello World Compiler
 
-* Lexer : text/scanner
-* Parser: goyacc
-* Transpile: C++
-* Compiler: gcc
+Reads a _helloworld_ file, parses it using (_**goyacc**_)[https://pkg.go.dev/modernc.org/goyacc] and compiles it to a binary.
 
-Reads a _helloworld_ file, parses it and compiles it.
+## Syntax
+
+There are just two productions (this is meant to be simple):
+
+* `helloworld ;`, which will generate a "Hello, World!"
+* `helloworld "some string";`, which will generate a "Hello, some string!"
+
+The scanner discards whitespaces. Used the Go [**text/scanner**](https://pkg.go.dev/text/scanner) for its simplicity. The parsed content is then transpiled to C++ and compiled into a binary using `gcc` (must be installed).
 
 ## Usage
 
