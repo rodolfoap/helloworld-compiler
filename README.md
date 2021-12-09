@@ -11,11 +11,15 @@ There are just two productions (this is meant to be simple):
 
 The scanner discards whitespaces. Used the Go [**text/scanner**](https://pkg.go.dev/text/scanner) for its simplicity. The parsed content is then transpiled to C++ and compiled into a binary using `g++` (must be installed).
 
-## Usage
+## Build the compiler
 
 ```
 $ goyacc hwcompile.y && go build
+```
 
+## Compiling helloworld programs
+
+```
 $ cat prog.hw;
 
 helloworld;
