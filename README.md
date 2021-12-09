@@ -16,7 +16,7 @@ The scanner discards whitespaces. Used the Go [**text/scanner**](https://pkg.go.
 ```
 $ goyacc hwcompile.y && go build
 
-$ cat input.hw;
+$ cat prog.hw;
 
 helloworld;
 helloworld "Bonzo";
@@ -25,13 +25,13 @@ helloworld "James Patrick Page";
 helloworld "John Richard Paul Jones Baldwin";
 helloworld "helloworld";
 
-$ ./hwcompile input.hw
+$ ./hwcompile prog.hw
 
-$ ls -l hello.bin
+$ ls -l prog.out
 
--rwxr-xr-x 1 rap rap 17240 Dec  8 06:17 hello.bin
+-rwxr-xr-x 1 rap rap 17240 Dec  9 02:57 prog.out
 
-$ ./hello.bin
+$ ./prog.out
 
 Hello, World!
 Hello, Bonzo!
