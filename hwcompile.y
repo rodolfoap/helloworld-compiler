@@ -16,10 +16,7 @@ const COMPILER="/bin/g++"
 %token EOF;
 %%
 top	: list
-	{
-		$$=fmt.Sprintf("#include<iostream>\nint main(){%v\n}", $1);
-		program=$$
-	}
+	{ program=fmt.Sprintf("#include<iostream>\nint main(){%v\n}", $1); }
 	;
 
 list	: /* empty */
@@ -27,6 +24,7 @@ list	: /* empty */
 	| list command
 	{ $$=fmt.Sprintf("%v\n\t%v", $1, $2); }
 	;
+
 command : HWCOMMAND ';'
 	{ $$=fmt.Sprintf("std::cout<<\"Hello, World!\"<<std::endl;"); }
 	| HWCOMMAND STRING ';'
@@ -65,6 +63,5 @@ func main() {
 	lx:=new(MainLex)
 	lx.Init(file)
 	yyParse(lx)
-	//fmt.Printf("%s\n===\n", program)
 	yyCompile()
 }
